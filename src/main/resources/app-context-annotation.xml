@@ -16,6 +16,8 @@
     <context:annotation-config />
     <context:component-scan base-package="home.stetsenko"/>
 
+    <!--this is constructor injection.
+    c:_0 it is first argument of String constructor -->
     <bean id="message" class="java.lang.String"
           c:_0="This is constructor message - annotation"/>
 

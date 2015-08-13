@@ -8,8 +8,8 @@ import static org.junit.Assert.assertNotNull;
 
 public class CoreTests {
 
-    private static final String XML_CONSTRACTOR_MESSAGE = "This is constructor message - xml";
-    private static final String ANNOTATION_CONSTRACTOR_MESSAGE = "This is constructor message - annotation";
+    private static final String XML_CONSTRUCTOR_MESSAGE = "This is constructor message - xml";
+    private static final String ANNOTATION_CONSTRUCTOR_MESSAGE = "This is constructor message - annotation";
 
     @Test
     public void testXML() {
@@ -20,7 +20,7 @@ public class CoreTests {
         assertNotNull(provider);
         String message = provider.getMessage();
         assertNotNull(message);
-        assertEquals(message, XML_CONSTRACTOR_MESSAGE);
+        assertEquals(message, XML_CONSTRUCTOR_MESSAGE);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class CoreTests {
         assertNotNull(provider);
         String message = provider.getMessage();
         assertNotNull(message);
-        assertEquals(message, ANNOTATION_CONSTRACTOR_MESSAGE);
+        assertEquals(message, ANNOTATION_CONSTRUCTOR_MESSAGE);
     }
 
     private GenericXmlApplicationContext getContext(String s) {

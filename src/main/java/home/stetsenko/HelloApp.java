@@ -1,7 +1,5 @@
 package home.stetsenko;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class HelloApp {
