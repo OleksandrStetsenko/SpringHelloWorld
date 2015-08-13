@@ -15,22 +15,22 @@
 
     <context:annotation-config />
 
-    <bean id="provider" class="home.stetsenko.HelloMessageProvider"
+    <bean id="messageProvider" class="home.stetsenko.HelloMessageProvider"
             c:message="This is constructor message - xml"/>
     <!--
     another way to set message
-    <bean id="provider" class="home.stetsenko.HelloMessageProvider">
+    <bean id="messageProvider" class="home.stetsenko.HelloMessageProvider">
         <constructor-arg>
             <value>This is constructor message</value>
         </constructor-arg>
     </bean>
     -->
 
-    <bean id="renderer" class="home.stetsenko.StandardOutMessageRenderer"
-          p:messageProvider-ref="provider"/>
+    <bean id="messageRenderer" class="home.stetsenko.StandardOutMessageRenderer"
+          p:messageProvider-ref="messageProvider"/>
     <!--
     another way to set reference. If you does not have xmlns:p
-    <bean id="renderer" class="home.stetsenko.StandardOutMessageRenderer">
+    <bean id="messageRenderer" class="home.stetsenko.StandardOutMessageRenderer">
         <property name="messageProvider" ref="provider"
     </bean>
     -->
