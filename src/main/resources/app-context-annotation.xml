@@ -16,4 +16,7 @@
     <context:annotation-config />
     <context:component-scan base-package="home.stetsenko"/>
 
+    <bean id="message" class="java.lang.String"
+          c:_0="This is constructor message - annotation"/>
+
 </beans>

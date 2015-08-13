@@ -1,13 +1,22 @@
 package home.stetsenko;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service("messageProvider")
 public class HelloMessageProvider implements MessageProvider {
 
+    private  String message;
+
+    @Autowired
+    public HelloMessageProvider(String message) {
+        this.message = message;
+    }
+
     @Override
     public String getMessage() {
-        return "Hello, World";
+        return message;
     }
 }
