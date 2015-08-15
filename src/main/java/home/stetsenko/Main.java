@@ -10,7 +10,7 @@ public class Main {
     private static final Logger LOGGER = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
-        GenericXmlApplicationContext context = SpringHelper.getContext("app-context-xml.xml");
+        GenericXmlApplicationContext context = SpringHelper.getContext("app-context-annotation.xml");
 
         //renderer
         MessageRenderer renderer = context.getBean("messageRenderer", MessageRenderer.class);
@@ -19,6 +19,10 @@ public class Main {
         //constructor confusion
         ConstructorConfusion constructorConfusion = context.getBean("constructorConfusion", ConstructorConfusion.class);
         LOGGER.info(constructorConfusion.getSomeValue());
+
+        //simple inject
+        Object injectSimple = context.getBean("injectSimple", InjectSimple.class);
+        LOGGER.info(injectSimple);
     }
 
 }

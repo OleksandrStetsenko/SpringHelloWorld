@@ -29,6 +29,7 @@
     <bean id="messageRenderer" class="home.stetsenko.hello.StandardOutMessageRenderer"
           p:messageProvider-ref="messageProvider"/>
     <!--
+    This is setter injection
     Another way to set reference. If you does not have xmlns:p
     The prototype of @Autowired annotation
     <bean id="messageRenderer" class="home.stetsenko.hello.StandardOutMessageRenderer">
@@ -41,6 +42,18 @@
         <constructor-arg type="int">
             <value>90</value>
         </constructor-arg>
+    </bean>
+
+    <bean id="injectSimple" class="home.stetsenko.InjectSimple">
+        <property name="name">
+            <value>John Smith</value>
+        </property>
+        <property name="age">
+            <value>35</value>
+        </property>
+        <property name="programmer">
+            <value>false</value>
+        </property>
     </bean>
 
 </beans>
