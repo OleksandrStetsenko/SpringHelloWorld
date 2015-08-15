@@ -1,4 +1,4 @@
-package home.stetsenko;
+package home.stetsenko.hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

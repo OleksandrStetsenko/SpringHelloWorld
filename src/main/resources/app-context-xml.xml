@@ -13,29 +13,34 @@
         http://www.springframework.org/schema/context/spring-util.xsd
         ">
 
-    <context:annotation-config />
-
-    <bean id="messageProvider" class="home.stetsenko.HelloMessageProvider"
+    <bean id="messageProvider" class="home.stetsenko.hello.HelloMessageProvider"
             c:message="This is constructor message - xml"/>
     <!--
     Another way to set message using constructor injection
     You can set value in constructor, using @Value annotation near the parameter, but it is not good
        better to use @Autowired and bean from app-context-annotation.xml
-    <bean id="messageProvider" class="home.stetsenko.HelloMessageProvider">
+    <bean id="messageProvider" class="home.stetsenko.hello.HelloMessageProvider">
         <constructor-arg>
             <value>This is constructor message - xml</value>
         </constructor-arg>
     </bean>
     -->
 
-    <bean id="messageRenderer" class="home.stetsenko.StandardOutMessageRenderer"
+    <bean id="messageRenderer" class="home.stetsenko.hello.StandardOutMessageRenderer"
           p:messageProvider-ref="messageProvider"/>
     <!--
     Another way to set reference. If you does not have xmlns:p
     The prototype of @Autowired annotation
-    <bean id="messageRenderer" class="home.stetsenko.StandardOutMessageRenderer">
+    <bean id="messageRenderer" class="home.stetsenko.hello.StandardOutMessageRenderer">
         <property name="messageProvider" ref="messageProvider"
     </bean>
     -->
-    
+
+    <!-- says to use constructor with int type argument -->
+    <bean id="constructorConfusion" class="home.stetsenko.ConstructorConfusion">
+        <constructor-arg type="int">
+            <value>90</value>
+        </constructor-arg>
+    </bean>
+
 </beans>
