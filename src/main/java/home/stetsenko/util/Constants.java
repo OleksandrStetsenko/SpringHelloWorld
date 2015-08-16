@@ -10,5 +10,6 @@ public class Constants {
     public static final String OLEKSANDR_STETSENKO = "Oleksandr Stetsenko";
     public static final String SPEL_USERNAME = "SpEL username";
     public static final int SPEL_AGE = 30;
+    public static final String USE_INTERNET = "Use Internet";
 
 }

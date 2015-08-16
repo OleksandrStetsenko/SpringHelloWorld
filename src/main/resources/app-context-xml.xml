@@ -72,6 +72,15 @@
         </property>
     </bean>
         
-    
+    <!--inject one ref to another    -->
+    <bean id="oracle" name="wiseworm" class="home.stetsenko.ref.Oracle"/>
+    <bean id="injectRef" class="home.stetsenko.ref.InjectRef">
+        <property name="oracle">
+            <!--you can user name of bean instead of id-->
+            <!--only if you uses <ref bean=""/> construction -->
+            <!--if you use <ref local=""/> construction, you should specify id of bean -->
+            <ref bean="wiseworm"/>
+        </property>
+    </bean>
 
 </beans>
