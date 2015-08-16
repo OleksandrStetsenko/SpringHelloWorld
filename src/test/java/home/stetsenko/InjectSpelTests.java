@@ -11,8 +11,6 @@ import static org.junit.Assert.assertEquals;
 
 public class InjectSpelTests {
 
-
-
     @Test
     public void testXML() {
         GenericXmlApplicationContext context = SpringHelper.getContext("app-context-xml.xml");
