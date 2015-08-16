@@ -15,8 +15,20 @@ import static org.junit.Assert.assertEquals;
 public class CollectionInjectionTests {
 
     @Test
-    public void testCollectionInjection() {
+    public void testXML() {
         GenericXmlApplicationContext context = SpringHelper.getContext("app-context-xml.xml");
+        CollectionInjection injectionCollection = context.getBean("injectionCollection", CollectionInjection.class);
+        Map<String, Object> actualMap = injectionCollection.getMap();
+        Map<String, Object> expectedMap = new HashMap<String, Object>();
+        expectedMap.put("someValue", Constants.HELLO_WORLD);
+        expectedMap.put("someBean", context.getBean("oracle", Oracle.class));
+
+        assertEquals(expectedMap, actualMap);
+    }
+
+    @Test
+    public void testAnnotations() {
+        GenericXmlApplicationContext context = SpringHelper.getContext("app-context-annotation.xml");
         CollectionInjection injectionCollection = context.getBean("injectionCollection", CollectionInjection.class);
         Map<String, Object> actualMap = injectionCollection.getMap();
         Map<String, Object> expectedMap = new HashMap<String, Object>();
