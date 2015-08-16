@@ -9,7 +9,6 @@ public class ConstructorConfusion {
 
     private String someValue;
 
-
     //Only one constructor can have @Autowired annotation
     //Bad style using @Value. Just for example.
     //Better to create new bean at app-context-annotation.xml like "message" bean

@@ -2,6 +2,7 @@ package home.stetsenko.util;
 
 public class Constants {
 
+    public static final String HELLO_WORLD = "Hello, World!";
     public static final String XML_CONSTRUCTOR_MESSAGE = "This is constructor message - xml";
     public static final String ANNOTATION_CONSTRUCTOR_MESSAGE = "This is constructor message - annotation";
     public static final String XML_CONFUSION_STRING = "String: 90";

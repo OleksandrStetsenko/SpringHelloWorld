@@ -9,8 +9,6 @@ import static org.junit.Assert.assertEquals;
 
 public class HierarchicalAppContextTests {
 
-
-
     @Test
     public void testXML() {
         GenericXmlApplicationContext parentContext = new GenericXmlApplicationContext();
