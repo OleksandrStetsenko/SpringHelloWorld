@@ -11,5 +11,7 @@ public class Constants {
     public static final String SPEL_USERNAME = "SpEL username";
     public static final int SPEL_AGE = 30;
     public static final String USE_INTERNET = "Use Internet";
+    public static final String BEAN_IN_PARENT = "Bean in parent";
+    public static final String BEAN_IN_CHILD = "Bean in child";
 
 }

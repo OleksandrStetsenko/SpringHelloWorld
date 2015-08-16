@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--hierarcjical test-->
+    <!--current context it is child context to parent.xml-->
+    <bean id="hierarchicalTestBean" class="java.lang.String">
+        <constructor-arg>
+            <value>Bean in child</value>
+        </constructor-arg>
+    </bean>
+    <bean id="target1" class="home.stetsenko.SimpleTarget">
+        <property name="value">
+            <ref bean="hierarchicalTestBeanParent"/>
+        </property>
+    </bean>
+    <!--get bean from current context-->
+    <bean id="target2" class="home.stetsenko.SimpleTarget">
+        <property name="value">
+            <ref bean="hierarchicalTestBean"/>
+        </property>
+    </bean>
+    <!--look at <ref parent="">. get bean from parent-->
+    <bean id="target3" class="home.stetsenko.SimpleTarget">
+        <property name="value">
+            <ref parent="hierarchicalTestBean"/>
+        </property>
+    </bean>
+
+</beans>
